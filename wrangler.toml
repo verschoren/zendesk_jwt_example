@@ -1,0 +1,4 @@
+name = "jwt"
+account_id = "1e230692e8529617e34ee5ca900acae1"
+type = "webpack"
+workers_dev = true

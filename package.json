@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "jwt",
+  "version": "1.0.0",
+  "description": "Example Code for Zendesk JWT.",
+  "main": "index.js",
+  "author": "Thomas Verschoren <thomas@verschoren.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jwt-simple": "0.5.6"
+  }
+}

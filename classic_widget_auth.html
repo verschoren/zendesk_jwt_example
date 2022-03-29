@@ -1,0 +1,65 @@
+{{#if signed_in}}
+<script type="text/javascript">
+    console.log("User Logged In");
+
+    //Get info on current User
+    var user = [];
+    $.ajax({
+        url: '/api/v2/users/me',
+        async: false,
+        dataType: 'json',
+        success: function (json) {
+            user = json;
+        }
+    });
+
+    //get token for current user
+    var jwttoken = '';
+    $.ajax({
+        type: "POST",
+        url: 'https://jwt.verschoren.workers.dev/guide',
+        data: JSON.stringify({ "external_id": user.user.id, "user_email": user.user.email, "user_name": user.user.name }),
+        dataType: 'text',
+        async: false,
+        success: function (json) {
+            jwttoken = json;
+        }
+    });
+    console.log(jwttoken)
+
+    //Prefill Forms and Chat
+    zE('webWidget', 'identify', {
+        name: user.user.name,
+        email: user.user.email,
+    });
+
+    zE('webWidget', 'prefill', {
+        name: {
+            value: user.user.name,
+            readOnly: true
+        },
+        email: {
+            value: user.user.email,
+            readOnly: true
+        }
+    });
+
+    //Authenticate
+    window.zESettings = {
+        webWidget: {
+            authenticate: {
+                jwtFn: function (callback) {
+                    callback(jwttoken);
+                }
+            }
+        }
+    }
+</script>
+{{else}}
+<script>
+    console.log("user logged out");
+    zE(function () {
+        zE.logout();
+    });
+</script>
+{{/if}}

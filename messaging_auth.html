@@ -1,0 +1,40 @@
+{{#if signed_in}}
+<script type="text/javascript">
+  console.log("User Logged In");
+
+  //Get info on current User
+  var user = [];
+  $.ajax({
+    url: '/api/v2/users/me',
+    async: false,
+    dataType: 'json',
+    success: function (json) {
+      user = json;
+    }
+  });
+
+  //get token for current user
+  var jwttoken = '';
+  $.ajax({
+    type: "POST",
+    url: 'https://jwt.verschoren.workers.dev/messaging',
+    data: JSON.stringify({ "external_id": user.user.id, "user_email": user.user.email, "user_name": user.user.name }),
+    dataType: 'text',
+    async: false,
+    success: function (json) {
+      jwttoken = json;
+    }
+  });
+  console.log(jwttoken)
+
+  //authenticate messaging
+  zE('messenger', 'loginUser', function (callback) {
+    callback(jwttoken);
+  });
+</script>
+{{else}}
+<script>
+  console.log("user logged out");
+  zE('messenger', 'logoutUser');
+</script>
+{{/if}}
