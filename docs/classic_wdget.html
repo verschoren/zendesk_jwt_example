@@ -1,0 +1,215 @@
+<!doctype html>
+<html class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <title>JWT Demo Classic Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="output.css" rel="stylesheet">
+    <!-- Start of classic-widget Zendesk Widget script -->
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=0a2feffd-e8f6-4772-96bf-2e1ae82842a9"> </script>
+    <script type="text/javascript">
+        window.zESettings = {
+          webWidget: {
+            contactOptions: {
+              enabled: true,
+              contactButton: { '*': 'Get in touch' }
+            }
+          }
+        };
+      </script>
+    <!-- End of classic-widget Zendesk Widget script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body class="h-full overflow-hidden">
+    <div class="h-full flex">
+    <div class="lg:flex lg:flex-shrink-0 h-full">
+      <div class="flex flex-col w-20">
+        <div class="flex-1 flex flex-col min-h-0 overflow-y-auto bg-blue-600">
+          <div class="flex-1">
+            <div class="bg-blue-700 py-4 flex items-center justify-center">
+              <img class="h-8 w-auto" src="internalnote_black_dark.svg" alt="Workflow">
+            </div>
+            <nav aria-label="Sidebar" class="py-6 flex flex-col items-center space-y-3">
+              <a href="index.html" class="flex items-center p-4 rounded-lg text-blue-200 hover:bg-blue-700">
+                <!-- Heroicon name: outline/home -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                  <span class="sr-only">Classic</span>
+              </a>
+  
+              <a href="messaging.html" class="flex items-center p-4 rounded-lg text-blue-200 hover:bg-blue-700">
+                <!-- Heroicon name: outline/fire -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                  </svg>
+                  <span class="sr-only">Messaging</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="flex-1 min-w-0 flex flex-col overflow-hidden">  
+      <main class="flex-1 flex overflow-hidden">
+        <div class="flex-1 flex flex-col overflow-y-auto xl:overflow-hidden">  
+          <div class="flex-1 flex xl:overflow-hidden">  
+            <!-- Main content -->
+            <div class="flex-1 xl:overflow-y-auto">
+              <div class="max-w-3xl mx-auto py-10 px-4 sm:px-6 lg:py-12 lg:px-8">
+                <h1 class="text-3xl font-extrabold text-blue-gray-900">Classic Widget</h1>
+  
+                <form class="mt-6 space-y-8 divide-y divide-y-blue-gray-200">
+                  <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-6 sm:gap-x-6">
+                    <div class="sm:col-span-6">
+                      <h2 class="text-xl font-medium text-blue-gray-900">User Info</h2>
+                      <p class="mt-1 text-sm text-blue-gray-500">Fill in this form to authenticate with a random user.</p>
+                    </div>
+  
+                    <div class="sm:col-span-3">
+                      <label for="name" class="block text-sm font-medium text-blue-gray-900">Name </label>
+                      <input type="text" name="name" id="name" value="John Smith" autocomplete="given-name" class="mt-1 block w-full border-blue-gray-300 rounded-md shadow-sm text-blue-gray-900 sm:text-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+  
+                    <div class="sm:col-span-3">
+                      <label for="email" class="block text-sm font-medium text-blue-gray-900"> Email</label>
+                      <input type="email" name="email" id="email" value="john@example.com" autocomplete="email" class="mt-1 block w-full border-blue-gray-300 rounded-md shadow-sm text-blue-gray-900 sm:text-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+  
+                    <div class="sm:col-span-6">
+                      <label for="username" class="block text-sm font-medium text-blue-gray-900"> External ID </label>
+                      <div class="mt-1 flex rounded-md shadow-sm">
+                        <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-blue-gray-300 bg-blue-gray-50 text-blue-gray-500 sm:text-sm"> UUID</span>
+                        <input type="text" readonly name="external_id" id="external_id" autocomplete="username" value="" class="flex-1 block w-full min-w-0 border-blue-gray-300 rounded-none rounded-r-md text-blue-gray-900 sm:text-sm focus:ring-gray-50 focus:border-blue-gray-300  bg-gray-50">
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="pt-8 flex justify-end">
+                    <button type="button" onclick="Logout()" id="logout" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-blue-gray-900 hover:bg-blue-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Logout</button>
+                    <button type="button" onclick="Login()" id="login" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Login</button>
+                  </div>
+                </form>
+
+                <div id="login_ok" style="display:none" class="rounded-md bg-green-50 p-4 mt-8">
+                    <div class="flex">
+                    <div class="flex-shrink-0">
+                        <!-- Heroicon name: solid/check-circle -->
+                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="text-sm font-medium text-green-800">User logged in</h3>
+                        <div class="mt-2 text-sm text-green-700">
+                        <p>We've succesfully logged in and authenticated your user.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div id="logout_ok" style="display:none" class="rounded-md bg-red-50 p-4">
+                    <div class="flex">
+                    <div class="flex-shrink-0">
+                        <!-- Heroicon name: solid/x-circle -->
+                        <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="text-sm font-medium text-red-800">User logged out</h3>
+                        <div class="mt-2 text-sm text-red-700">
+                            <p>We've succesfully logged out.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    function Logout(){
+        console.log("user logged out");
+        zE(function () {
+            zE.logout();
+        });
+
+        zE('webWidget', 'prefill', {
+            name: {
+                value: '',
+                readOnly: false
+            },
+            email: {
+                value: '',
+                readOnly: false
+            }
+        });
+    }
+
+    function Login(){
+        $('#external_id').val(uuidv4)
+        var user = {
+            name: $('#name').val(),
+            email: $('#email').val(),
+            external_id: $('#external_id').val()
+        }        
+        console.log("User logged in", user);
+
+        //get token for current user
+        var jwttoken = '';
+        $.ajax({
+            type: "POST",
+            url: 'https://jwt-demo.verschoren.workers.dev/guide',
+            data: JSON.stringify({ "external_id": user.external_id, "user_email": user.email, "user_name": user.name }),
+            dataType: 'text',
+            async: false,
+            success: function (json) {
+                jwttoken = json;
+                $('#login_ok').show();
+            }
+        });
+        console.log(jwttoken)
+
+        //Prefill Forms and Chat
+        zE('webWidget', 'identify', {
+            name: user.name,
+            email: user.email,
+        });
+
+        zE('webWidget', 'prefill', {
+            name: {
+                value: user.name,
+                readOnly: true
+            },
+            email: {
+                value: user.email,
+                readOnly: true
+            }
+        });
+
+        //Authenticate
+        window.zESettings = {
+            webWidget: {
+                authenticate: {
+                    jwtFn: function (callback) {
+                        callback(jwttoken);
+                    }
+                }
+            }
+        }
+    }
+
+    function uuidv4() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+  }
+</script>
