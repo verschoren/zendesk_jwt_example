@@ -55,7 +55,7 @@ function respondChat(json) {
   if (!json.name || !json.email || !json.external_id) {
     return new Response("missing parameters", { status: 401 });
   } else {
-    var secret = "abc123";
+    var secret = "abc123"; //Add your Chat Token here
 
     var token_raw = {
       iat: Math.floor(Date.now() / 1000),
@@ -77,7 +77,7 @@ async function respondSDK(json) {
   if (!json.user_token) {
     return new Response("missing parameters", { status: 401 });
   } else {
-    var secret = "abc123";
+    var secret = "abc123"; //Add your SDK Token here
 
     var token_raw = {
       jti: Math.floor(Math.random() * 10000000),
@@ -99,7 +99,7 @@ async function respondGuide(json) {
   if (!json.external_id || !json.user_email || !json.user_name) {
     return new Response("missing parameters", { status: 401 });
   } else {
-    var secret = "abc123";
+    var secret = "abc123"; //Add your Guide Token here
 
     var token_raw = {
       jti: Math.floor(Math.random() * 10000000),
@@ -122,7 +122,7 @@ async function respondMessaging(json) {
   if (!json.external_id || !json.user_email || !json.user_name) {
     return new Response("missing parameters", { status: 401 });
   } else {
-    var app_id = "app_123";
+    var app_id = "app_123"; //Add your Messaging App ID and Secret here
     var secret ="abc123";
 
     const key = await crypto.subtle.importKey(
