@@ -117,7 +117,7 @@ async function respondGuide(json) {
 }
 
 async function respondMessaging(json) {
-  //{"external_id":1906365876753,"user_email":"thomasverschoren@premiumplus.io","user_name":"Thomas Verschoren"}
+  //{"external_id":1906365876753,"user_email":"thomas@verschoren.com","user_name":"Thomas Verschoren"}
 
   if (!json.external_id || !json.user_email || !json.user_name) {
     return new Response("missing parameters", { status: 401 });
