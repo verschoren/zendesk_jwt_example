@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    function Logout(){
+        console.log("user logged out");
+        zE('messenger', 'logoutUser');
+    }
+
+    function Login(){
+      $('#external_id').val(uuidv4)
+      var user = {
+          name: $('#name').val(),
+          email: $('#email').val(),
+          external_id: $('#external_id').val()
+      }        
+      console.log("User logged in", user);
+
+      //get token for current user
+      var jwttoken = '';
+      $.ajax({
+        type: "POST",
+        url: 'https://jwt-demo.verschoren.workers.dev/messaging',
+        data: JSON.stringify({ "external_id": user.external_id, "user_email": user.email, "user_name": user.name }),
+        dataType: 'text',
+        async: false,
+        success: function (json) {
+          jwttoken = json;
+          $('#login_ok').show();
+        }
+      });
+      console.log(jwttoken)
+
+      //authenticate messaging
+      zE('messenger', 'loginUser', function (callback) {
+        callback(jwttoken);
+      });
+    }
+
+    function uuidv4() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+  }
+</script>
