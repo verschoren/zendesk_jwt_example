@@ -1,4 +1,6 @@
 # JWT Generator
+**CHECK OUT THE FULL DEMO AND SETUP AT [INTERNALNOTE.COM](https://internalnote.com)**
+
 
 ## High Level
 This [Cloudflare](https://cloudflare.com) Worker generates multiple types of webtokens for the Zendesk SDKs and the Chat SDK and Web Widget. 
