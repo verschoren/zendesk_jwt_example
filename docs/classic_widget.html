@@ -167,7 +167,7 @@
         var jwttoken = '';
         $.ajax({
             type: "POST",
-            url: 'https://jwt-demo.verschoren.workers.dev/guide',
+            url: 'https://jwt-demo.verschoren.workers.dev/guide', //replace with your worker
             data: JSON.stringify({ "external_id": user.external_id, "user_email": user.email, "user_name": user.name }),
             dataType: 'text',
             async: false,
