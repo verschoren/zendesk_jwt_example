@@ -6,6 +6,10 @@ This [Cloudflare](https://cloudflare.com) Worker generates multiple types of web
 They assume a trusted environment where the SSO happens before this service is called.
 We assume that the app or website that calls these endpoints already handled the authentication and that we can return a status 200 trusted.
 
+## Deployment
+This tools makes use of Cloudflare Worker. Those are *free* serverless function that can run your API logic.
+Deployment can be done via this [GitHub Action](https://github.com/marketplace/actions/deploy-to-cloudflare-workers-with-wrangler)
+
 **We do recommend including a check with your SSO tool of choice to validate the user before returning the token**
 
 The script requires:
